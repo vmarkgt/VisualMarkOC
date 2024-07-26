@@ -37,11 +37,16 @@ body {
 
 @media (max-width: 600px) {
     .text {
-        font-size: 1.2em;
+        font-size: 2em;
+    }
+
+@media (max-width: 600px) {
+    .text2 {
+        font-size: 1.5em;
     }
 
     .clock {
-        font-size: 2.5em;
+        font-size: 12em;
     }
 }
 
