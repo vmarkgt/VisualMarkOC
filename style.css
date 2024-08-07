@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow-y: auto; /* Permite el scroll vertical */
 }
 
 .container {
@@ -13,7 +14,10 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 400px;
+    width: 90%;
+    max-width: 600px; /* Limita el ancho máximo */
+    position: relative;
+    margin: 20px; /* Añade un margen para espacios más pequeños */
 }
 
 header {
@@ -23,7 +27,8 @@ header {
 
 .logo {
     width: 100px;
-    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 h1 {
@@ -40,11 +45,20 @@ h1 {
     margin-bottom: 5px;
 }
 
-.form-group input, .form-group textarea {
+.form-group input, .form-group select, .form-group textarea {
     width: calc(100% - 20px);
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.inline-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inline-group input, .inline-group select {
+    width: 48%;
 }
 
 button {
@@ -54,8 +68,31 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+#timestamp {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+    .inline-group {
+        flex-direction: column;
+    }
+
+    .inline-group input, .inline-group select {
+        width: 100%;
+    }
 }
