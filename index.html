@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Vmark</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo de la Empresa" class="logo">
+            <h1>Formulario de Compra</h1>
+        </header>
+        <form id="purchaseForm">
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="paquete">Paquete de Contratación:</label>
+                <input type="text" id="paquete" name="paquete" required>
+            </div>
+            <div class="form-group">
+                <label for="meses">Meses de Contratación:</label>
+                <input type="number" id="meses" name="meses" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de Inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaFin">Fecha de Finalización:</label>
+                <input type="date" id="fechaFin" name="fechaFin" required>
+            </div>
+            <div class="form-group">
+                <label for="vendedor">Vendedor:</label>
+                <input type="text" id="vendedor" name="vendedor" required>
+            </div>
+            <div class="form-group">
+                <label for="observacion">Observación:</label>
+                <textarea id="observacion" name="observacion" rows="4"></textarea>
+            </div>
+            <button type="button" onclick="downloadPDF()">Descargar PDF</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
