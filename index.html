@@ -9,7 +9,7 @@
 <body>
     <div class="container" id="pdf-content">
         <header>
-            <img src="logo.png" alt="logo.png" class="logo" id="company-logo">
+            <img src="logo.png" alt="Logo de la Empresa" class="logo" id="company-logo">
             <h1>Formulario de Compra</h1>
         </header>
         <form id="purchaseForm">
@@ -49,6 +49,7 @@
             <div class="form-group">
                 <label for="pago">Método de Pago:</label>
                 <select id="pago" name="pago" required onchange="updatePaymentFields()">
+                    <option value="efectivo">-</option>
                     <option value="efectivo">Efectivo</option>
                     <option value="credito">Crédito</option>
                 </select>
@@ -60,6 +61,10 @@
             <div class="form-group" id="creditoField" style="display: none;">
                 <label for="diasCredito">Días de Crédito:</label>
                 <input type="number" id="diasCredito" name="diasCredito">
+            </div>
+            <div class="form-group">
+                <label for="Vendedor">Vendedor:</label>
+                <input type="text" id="Vendedor" name="Vendedor" required>
             </div>
             <div class="form-group">
                 <label for="observacion">Observación:</label>
