@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="pdf-content">
+        <header>
+            <img src="logo.png" alt="logo.png" class="logo" id="company-logo">
+            <h1>Formulario de Compra</h1>
+        </header>
+        <form id="purchaseForm">
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="medio">Tipo de Medio:</label>
+                <select id="medio" name="medio" required>
+                    <option value="pantalla">Pantalla</option>
+                    <option value="valla">Valla</option>
+                    <option value="pasarela">Pasarela</option>
+                    <option value="parada_de_bus">Parada de Bus</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tipoContratacion">Tipo de Contratación:</label>
+                <input type="text" id="tipoContratacion" name="tipoContratacion" required>
+            </div>
+            <div class="form-group">
+                <label for="ubicacion">Ubicación:</label>
+                <input type="text" id="ubicacion" name="ubicacion" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de Inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaFin">Fecha de Finalización:</label>
+                <input type="date" id="fechaFin" name="fechaFin" required>
+            </div>
+            <div class="form-group">
+                <label for="monto">Monto (Q):</label>
+                <input type="number" id="monto" name="monto" required>
+            </div>
+            <div class="form-group">
+                <label for="pago">Método de Pago:</label>
+                <select id="pago" name="pago" required onchange="updatePaymentFields()">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="credito">Crédito</option>
+                </select>
+            </div>
+            <div class="form-group" id="efectivoField" style="display: none;">
+                <label for="numeroBoleta">Número de Boleta:</label>
+                <input type="text" id="numeroBoleta" name="numeroBoleta">
+            </div>
+            <div class="form-group" id="creditoField" style="display: none;">
+                <label for="diasCredito">Días de Crédito:</label>
+                <input type="number" id="diasCredito" name="diasCredito">
+            </div>
+            <div class="form-group">
+                <label for="observacion">Observación:</label>
+                <textarea id="observacion" name="observacion" rows="4"></textarea>
+            </div>
+        </form>
+        <button id="download-btn" type="button" onclick="downloadPDF()">Descargar PDF</button>
+        <div id="timestamp"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
